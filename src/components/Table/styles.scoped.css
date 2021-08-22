@@ -1,0 +1,50 @@
+.nodata {
+  color: #334d6e;
+  font-size: .8rem;
+  padding: 3rem!important;
+  text-align: center;
+}
+.nodata > img {
+  height: 10rem!important;
+}
+.root {
+  border-collapse: collapse;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0.25rem 1.25rem rgba(0, 0, 0, 0.06);
+  width: 100%;
+}
+
+.root > tbody > tr:hover {
+  background-color: #f7f7f7;
+}
+
+.root > thead > tr,
+.root > tbody > tr {
+  border-bottom: 0.1rem solid #EBEFF2;
+  height: 5rem;
+}
+
+.root > tbody > tr:last-of-type {
+  border: none;
+}
+
+.root > thead > tr > th {
+  color: #808285;
+  font-weight: normal;
+  text-align: left;
+}
+
+.root > tbody > tr > td,
+.root > thead > tr > th {
+  padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+
+.root > thead > tr > th:last-of-type {
+  width: 10.3rem;
+}
+
+.root > tbody > tr > td:last-of-type > a:first-of-type {
+  margin-right: 1rem;
+}

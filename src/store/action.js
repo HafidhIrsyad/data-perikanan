@@ -37,26 +37,41 @@ export function fetchDetailPerikanan(id) {
     dispatch(loadingAction(true));
     try {
       const { data } = await getDetailDataPerikanan(id);
+      console.log(data);
       dispatch(fetchAction({ detailById: data }));
     } catch (err) {
+      if(err.code === 404) {
+        dispatch(fetchAction({ detailById: [] }));
+      }
       dispatch(failedAction(err.message));
     }
   };
 }
 
-export function fetchUpdatePerikanan(data, type, userId) {
-  const apis = {
-    'add' : insertDataPerikanan,
-    'edit' : updateDataPerikanan,
-  };
-
+export function fetchUpdatePerikanan(id, data) {
   return async dispatch => {
     dispatch(loadingAction(true));
     try {
-      await apis[type](data, type === 'edit' && userId);
+      await updateDataPerikanan(id, data);
       dispatch(loadingAction(false));
       dispatch(push({ pathname: '/',
-        state:{ notif: `Data Fishery has been successfully ${type}.` } }));
+        state:{ notif: `Data Fishery has been successfully update.` } }));
+    } catch (err) {
+      dispatch(loadingAction(false));
+      dispatch(push({ pathname: '/',
+        state:{ notif: `${err.message} ---#ee4c24 ` } }));
+    }
+  };
+}
+
+export function fetchCreatePerikanan(data) {
+  return async dispatch => {
+    dispatch(loadingAction(true));
+    try {
+      await insertDataPerikanan(data);
+      dispatch(loadingAction(false));
+      dispatch(push({ pathname: '/',
+        state:{ notif: `Data Fishery has been successfully insert.` } }));
     } catch (err) {
       dispatch(loadingAction(false));
       dispatch(push({ pathname: '/',

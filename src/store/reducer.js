@@ -3,7 +3,7 @@ import { FAILED, FETCH, LOADING } from './type';
 export const initialState = {
   counter: 1,
   perikanan: [],
-  detailById: '',
+  detailById: [],
   isLoading: false,
   error: null,
 }

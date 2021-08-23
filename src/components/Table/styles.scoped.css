@@ -1,18 +1,15 @@
-.nodata {
+/* .nodata {
   color: #334d6e;
   font-size: .8rem;
   padding: 3rem!important;
   text-align: center;
-}
-.nodata > img {
-  height: 10rem!important;
 }
 .root {
   border-collapse: collapse;
   background: #ffffff;
   border-radius: 0.5rem;
   box-shadow: 0px 0.25rem 1.25rem rgba(0, 0, 0, 0.06);
-  width: 100%;
+  width: 80%;
 }
 
 .root > tbody > tr:hover {
@@ -47,4 +44,4 @@
 
 .root > tbody > tr > td:last-of-type > a:first-of-type {
   margin-right: 1rem;
-}
+} */

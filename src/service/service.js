@@ -6,7 +6,7 @@ export const getAllDataPerikanan = async (limit, offest) => {
 }
 
 export const getDetailDataPerikanan = async (id) => {
-  const getDetail = await axios.get(`https://stein.efishery.com/v1/storages/5e1edf521073e315924ceab4/list/${id}`);
+  const getDetail = await axios.get(`https://stein.efishery.com/v1/storages/5e1edf521073e315924ceab4/list/`, { params: { search : { "uuid": id }}});
   return getDetail?.data;
 }
 
@@ -15,8 +15,8 @@ export const insertDataPerikanan = async (data) => {
   return udpate?.data
 }
 
-export const updateDataPerikanan = async (id) => {
-  const insert = await axios.post(`https://stein.efishery.com/v1/storages/5e1edf521073e315924ceab4/list/${id}`,);
+export const updateDataPerikanan = async (id, data) => {
+  const insert = await axios.post(`https://stein.efishery.com/v1/storages/5e1edf521073e315924ceab4/list/`, { search: { "uuid": id }, set: data });
   return insert?.data
 }
 
